@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf")
+    format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/manrope/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+  font-style: normal;
+}
+
+:root {
+  --fontFamilyFraunces: "Fraunces", serif;
+  --fontFamilyManrope: "Manrope", sans-serif;
+
+  --fontSizeBody: 18px;
+  --fontSizeHeaderLarge: 80px;
+  --fontSizeHeaderMid: 56px;
+  --fontSizeHeaderSmall: 32px;
+
+  --tFontSizeBody: 16px;
+  --tFontSizeHeaderLarge: 60px;
+  --tFontSizeHeaderMid: 48px;
+  --tFontSizeHeaderSmall: 28px;
+
+  --mFontSizeBody: 16px;
+  --mFontSizeHeaderLarge: 48px;
+  --mFontSizeHeaderMid: 32px;
+  --mFontSizeHeaderSmall: 24px;
+
+  --lineHeightBody: 1.8;
+  --lineHeightHeaderLarge: 1;
+  --lineHeightHeader: 1.2;
+  --lineHeightButton: 1.5;
+
+  --white: hsl(0 0 100);
+  --green: hsl(150 100 63);
+  --purple100: hsl(276 100 99);
+  --purple500: hsl(271 12 34);
+  --purple900: hsl(273 85 13);
+
+  --s100: 8px;
+  --s150: 12px;
+  --s200: 16px;
+  --s250: 20px;
+  --s350: 28px;
+  --s400: 32px;
+  --s500: 40px;
+  --s550: 44px;
+  --s700: 56px;
+  --s800: 64px;
+  --s1000: 80px;
+  --s1100: 88px;
+  --s1400: 112px;
+  --s1600: 128px;
+  --s1800: 144px;
+  --s2100: 168px;
+  --s3700: 296px;
+
+  --heroWidth: 635px;
+  --phoneSize: 441px;
+  --phonePadding: 0;
+  --headerBottom: 296px;
+
+  --pageEdgePadding: 80px;
+  --pageTopPadding: 56px;
+
+  --aboutTop: 88px;
+  --aboutBottom: 144px;
+  --featureNumberGap: 56px;
+  --featureTextGap: 28px;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --fontSizeBody: var(--tFontSizeBody);
+    --fontSizeHeaderLarge: var(--tFontSizeHeaderLarge);
+    --fontSizeHeaderMid: var(--tFontSizeHeaderMid);
+    --fontSizeHeaderSmall: var(--tFontSizeHeaderSmall);
+
+    --heroWidth: 475px;
+    --phoneSize: 296px;
+    --phonePadding: 44px;
+
+    --headerBottom: 160px;
+    --pageEdgePadding: 44px;
+    --pageTopPadding: 32px;
+
+    --aboutTop: 56px;
+    --aboutBottom: 44px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --fontSizeBody: var(--mFontSizeBody);
+    --fontSizeHeaderLarge: var(--mFontSizeHeaderLarge);
+    --fontSizeHeaderMid: var(--mFontSizeHeaderMid);
+    --fontSizeHeaderSmall: var(--mFontSizeHeaderSmall);
+
+    --heroWidth: 335px;
+    --phoneSize: 184px;
+    --phonePadding: 20px;
+    --pageEdgePadding: 20px;
+    --headerBottom: 144px;
+    --aboutTop: 64px;
+    --aboutBottom: 64px;
+    --featureNumberGap: 24px;
+    --featureTextGap: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+header,
+section,
+footer {
+  padding-inline: var(--pageEdgePadding);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--stone100);
+  color: var(--stone600);
+  font-family: var(--fontFamilyManrope);
+  font-optical-sizing: auto;
+  font-size: var(--fontSizeBody);
+  line-height: var(--lineHeightBody);
+  letter-spacing: 0px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fontFamilyFraunces);
+  line-height: var(--lineHeightHeader);
+}
+
+h1 {
+  font-size: var(--fontSizeHeaderLarge);
+  line-height: var(--lineHeightHeaderLarge);
+}
+
+h2 {
+  font-size: var(--fontSizeHeaderMid);
+}
+
+h3 {
+  font-size: var(--fontSizeHeaderSmall);
+}
+
+button {
+  font-weight: bold;
+  line-height: var(--lineHeightButton);
+}
+
+header {
+  padding-block-start: var(--pageTopPadding);
+  background-color: var(--purple900);
+  color: var(--white);
+  padding-inline: var(--pageEdgePadding);
+  padding-bottom: var(--headerBottom);
+}
+
+nav {
+  height: 35px;
+  margin-inline: var(--s250);
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 35px;
+}
+
+.hero {
+  margin-inline: auto;
+  max-width: var(--heroWidth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 56px;
+}
+.hero-img-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-img {
+  position: absolute;
+  width: auto;
+  top: 0px;
+  max-height: var(--phoneSize);
+  margin-inline: auto;
+  padding: var(--phonePadding);
+}
+
+section.about {
+  padding-top: calc(var(--aboutTop));
+  padding-bottom: var(--aboutBottom);
+  background-color: var(--purple100);
+  color: var(--purple900);
+}
+
+.feature-wrapper {
+  margin-top: calc(var(--phoneSize) - var(--headerBottom));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 32px;
+}
+
+.feature-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--featureNumberGap);
+  align-items: center;
+  text-align: center;
+}
+
+.feature-number {
+  font-family: var(--fontFamilyFraunces);
+  min-height: 48px;
+  min-width: 48px;
+  border: 1px solid;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--featureTextGap);
+}
+
+@media only screen and (max-width: 800px) {
+  .feature-wrapper {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .feature-block {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .feature-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+section.call-to-action {
+  margin-top: 112px;
+  position: relative;
+  padding-bottom: 168px;
+}
+
+.image-founder {
+  max-width: 280px;
+}
+
+.cta-text-wrapper {
+  background-color: var(--purple900);
+  color: var(--white);
+  position: absolute;
+  top: 168px;
+  right: 0px;
+  max-width: 504px;
+  padding: 48px;
+}
+
+footer {
+  padding-block: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  img {
+    width: 24px;
+  }
+}
